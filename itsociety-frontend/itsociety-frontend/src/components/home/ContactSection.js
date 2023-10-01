@@ -40,8 +40,8 @@ const Row = styled.div`
 const Input = styled.input`
   margin-bottom: 20px;
   padding: 15px;
-  margin-right: 5%;
-  width: 23%;
+  margin-right: 5% !important;
+  width: 23% !important;
   border-radius: 20px;
   border: none;
   background-color: #FFFFFF;
@@ -116,7 +116,7 @@ export default function({ style }) {
       <Text>Zainteresowany indywidualnym szkoleniem? Skontaktuj się z nami!</Text>
       <Form onSubmit={handleSubmit}>
         <Row>
-          <Input type="text" name="name" placeholder="Imię i nazwisko" onChange={handleChange} />
+          <Input name="name" placeholder="Imię i nazwisko" onChange={handleChange} />
           <Input type="email" name="email" placeholder="Adres e-mail" onChange={handleChange} />
         </Row>
         <Textarea name="message" placeholder="Wiadomość" rows="4" onChange={handleChange}></Textarea>
