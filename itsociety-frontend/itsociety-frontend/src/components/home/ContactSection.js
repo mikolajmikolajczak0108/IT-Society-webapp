@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
-import { Title, Text, Section } from './SharedStyles'; // Import z SharedStyles.js
+import { Title as OriginalTitle, Text as OriginalText, Section } from './SharedStyles'; // Import z SharedStyles.js
 
 const floatIn = keyframes`
   0% {
@@ -21,6 +21,25 @@ const ContactSection = styled(Section)`
   flex-direction: column;
   align-items: flex-start;
   padding-left: 10%;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding-left: 0;
+  }
+`;
+
+const Title = styled(OriginalTitle)`
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+`;
+
+const Text = styled(OriginalText)`
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const Form = styled.form`
@@ -29,12 +48,21 @@ const Form = styled.form`
   align-items: flex-start;
   margin-top: 20px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   width: 100%;
   animation: ${floatIn} 1s ease-in-out;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Input = styled.input`
@@ -50,6 +78,11 @@ const Input = styled.input`
 
   &:focus {
     box-shadow: 0 0 10px #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 80% !important;
+    margin-right: 0 !important;
   }
 `;
 
@@ -67,6 +100,10 @@ const Textarea = styled.textarea`
 
   &:focus {
     box-shadow: 0 0 10px #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
   }
 `;
 

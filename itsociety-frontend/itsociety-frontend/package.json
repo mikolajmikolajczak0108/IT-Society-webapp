@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "babel-preset-es2015": "^6.24.1",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.5",
     "react-bootstrap": "^2.8.0",

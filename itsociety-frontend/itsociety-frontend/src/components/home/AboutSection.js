@@ -21,21 +21,37 @@ const WhySection = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+    @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
 `;
 
 const AnimatedTitle = styled(animated.h1)`
   font-size: 2.5em;
   margin-bottom: 20px;
+    @media (max-width: 768px) {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
 `;
 
 const Text = styled.p`
   font-size: 1em;
+    @media (max-width: 768px) {
+    font-size: 0.6em;
+  }
 `;
 
 const Image = styled.img`
   width: 300px;
   height: 300px;
   transition: opacity 0.5s ease;
+    @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 const Tab = styled.div`
@@ -50,6 +66,10 @@ const TabContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+    @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const SlideContainer = styled.div`
@@ -57,11 +77,19 @@ const SlideContainer = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
+    @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 const TextContainer = styled.div`
   width: 60%;
   padding: 20px;
+    @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Arrow = styled.div`
@@ -69,8 +97,18 @@ const Arrow = styled.div`
   font-size: 2em;
   margin: 0 20px;
   transition: transform 0.3s ease;
+    @media (max-width: 768px) {
+    font-size: 0.6em;
+    margin: 5px;
+  }
 `;
+const ResponsiveH2 = styled.h2`
+  font-size: 1rem; // domyślny rozmiar czcionki
 
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+  }
+`;
 export default function WhySectionComponent() {
   const [activeTab, setActiveTab] = useState('Dzieci');
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -121,7 +159,7 @@ export default function WhySectionComponent() {
         <Arrow style={{ transform: 'scale(1)' }} onClick={prevSlide}>&lt;</Arrow>
         <Image style={{ opacity: imageOpacity }} src={slides[currentSlide].image} alt={slides[currentSlide].title} />
         <TextContainer>
-          <h2>{slides[currentSlide].title}</h2>
+          <ResponsiveH2>{slides[currentSlide].title}</ResponsiveH2>
           <Text>{slides[currentSlide].text}</Text>
         </TextContainer>
         <Arrow style={{ transform: 'scale(1)' }} onClick={nextSlide}>&gt;</Arrow>

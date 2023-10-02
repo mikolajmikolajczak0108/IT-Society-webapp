@@ -32,6 +32,12 @@ const WelcomeSection = styled(animated.section)`
   padding-top: 0;
   position: relative;
   font-family: 'Martian Mono', monospace;
+    @media (max-width: 768px) {
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width:100%;
+  }
 `;
 
 const Title = styled(animated.h1)`
@@ -43,12 +49,20 @@ const Title = styled(animated.h1)`
   overflow: hidden;
   border-right: ${({ isComplete }) => (isComplete ? 'none' : '0.15em solid #19A7CE')};
   white-space: nowrap;
+    @media (max-width: 768px) {
+    font-size: 2.0rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Text = styled(animated.p)`
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 8rem;
+    @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-bottom: 4rem;
+  }
 `;
 
 const Subtitle = styled(animated.h2)`
@@ -56,13 +70,19 @@ const Subtitle = styled(animated.h2)`
   text-align: center;
   margin: 1rem;
   margin-bottom: 4rem;
-
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Percentage = styled(animated.span)`
   font-size: ${({ isComplete }) => (isComplete ? '2rem' : '1.5rem')};
   color: ${({ isComplete }) => (isComplete ? '#19A7CE' : '#146C94')};
   text-align: center;
+      @media (max-width: 768px) {
+    font-size: 1.0rem;
+  }
 `;
 
 const Card = styled.div`
@@ -70,11 +90,18 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 1rem;
+    @media (max-width: 768px) {
+    margin: 0.5rem;
+  }
 `;
 
 const Image = styled(animated.img)`
   width: 100px;
   height: 100px;
+      @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const textParts = [

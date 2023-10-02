@@ -14,11 +14,21 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: #2d004f !important;
   }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
 `;
 
 const Container = styled.div`
   font-family: 'Arial', sans-serif;
   background-color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export default function Home() {

@@ -15,12 +15,23 @@ const Nav = styled.nav`
   align-items: center;
   padding: 1rem;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 `;
 
 const Ul = styled(animated.ul)`
   list-style: none;
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const Li = styled(animated.li)`

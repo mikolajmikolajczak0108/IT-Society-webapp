@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Offers.css';
 
 const Offers = () => {
@@ -36,16 +37,25 @@ const Offers = () => {
         <option value="Math">Math</option>
         <option value="Language">Language</option>
       </select>
-      <div className="offers-grid">
-        {filteredOffers.map((offer, index) => (
-          <div className="offer-card" key={offer.id} style={{animationDelay: `${index * 0.1}s`}}>
-            <img src={`/assets/img/offer/${offer.image_path.split('/').pop()}`} alt={offer.title} />
-            <h2>{offer.title}</h2>
-            <p>{offer.price} USD</p>
-            <p>{offer.description}</p>
-          </div>
-        ))}
-      </div>
+      <motion.div className="offers-grid">
+        <AnimatePresence>
+          {filteredOffers.map((offer, index) => (
+            <motion.div
+              className="offer-card"
+              key={offer.id}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <img src={`/assets/img/offer/${offer.image_path.split('/').pop()}`} alt={offer.title} />
+              <motion.h2>{offer.title}</motion.h2>
+              <motion.p>{offer.price} USD</motion.p>
+              <motion.p>{offer.description}</motion.p>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

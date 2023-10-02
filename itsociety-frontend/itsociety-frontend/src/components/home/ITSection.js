@@ -36,6 +36,12 @@ const ITSection = styled(Section)`
   justify-content: flex-start;
   height: 70vh;
   position: relative;
+    @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
 `;
 
 const SlideContainer = styled(animated.div)`
@@ -48,6 +54,11 @@ const SlideContainer = styled(animated.div)`
   left: 5%;
   top: 20%;
   z-index: 2;
+    @media (max-width: 768px) {
+    width: 90%;
+    position: static;
+    text-align: center;
+  }
 `;
 
 const ImageContainer = styled(animated.div)`
@@ -59,6 +70,11 @@ const ImageContainer = styled(animated.div)`
   right: 0%;
   top: 5%;
   z-index: 1;
+    @media (max-width: 768px) {
+    width: 100%;
+    position: static;
+    margin-top: 20px;
+  }
 `;
 
 

@@ -1,17 +1,40 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
-import { Title, Text, Section } from './SharedStyles'; // Import z SharedStyles.js
+import { Title as OriginalTitle, Text as OriginalText, Section } from './SharedStyles'; // Import z SharedStyles.js
 
 const SocialMediaSection = styled(Section)`
   background-color: #000000;
   color: #F6F1F1;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+`;
+
+const Title = styled(OriginalTitle)`
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+`;
+
+const Text = styled(OriginalText)`
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const fadeInUp = keyframes`
@@ -57,6 +80,10 @@ const IconWrapper = styled.div`
     &.youtube:hover {
       fill: #cd201f;
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
   }
 `;
 
